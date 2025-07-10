@@ -7,12 +7,15 @@
   hosts: localhost
   connection: local
   vars:
-    a: 342
+    a: 100
     roles:
       - sample
-  tasks:
-    - name: print variable - task level
-      vars:
-        a: 400
-      ansible.builtin.debug:
-         msg: a -{{a}}
+    tasks:
+      - name: Print Variable
+        ansible.builtin.debug:
+         msg: a - {{a}}
+      - name: Print Variable - task level
+        vars:
+        a: 200
+        ansible.builtin.debug:
+         msg: a - {{a}}
