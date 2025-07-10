@@ -4,6 +4,8 @@
   vars:
     a: 342
   tasks:
-    - name: print variable
+    - name: print variable - task level
+      vars:
+        a: 400
       ansible.builtin.debug:
          msg: a -{{a}}
