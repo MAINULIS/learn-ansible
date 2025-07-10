@@ -1,8 +1,15 @@
+## variables precedence
+# 1. first priority cli (command line) declaration
+# 2. Task level variable
+# 2. then play level
+
 - name: Variable demo
   hosts: localhost
   connection: local
   vars:
     a: 342
+    roles:
+      - sample
   tasks:
     - name: print variable - task level
       vars:
