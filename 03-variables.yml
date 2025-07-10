@@ -1,7 +1,8 @@
 ## variables precedence
 # 1. first priority cli (command line) declaration
 # 2. Task level variable
-# 2. then play level
+# 3. role level
+# 4. then play level
 
 - name: Variable demo
   hosts: localhost
@@ -16,6 +17,6 @@
          msg: a - {{ a }}
       - name: Print Variable - task level
         vars:
-        a: 200
+          a: 200
         ansible.builtin.debug:
          msg: a - {{ a }}
